@@ -1,0 +1,4 @@
+D:\VsProj\Assembler_Lab11\Debug\Assembler_Lab11.exe
+D:\VsProj\Assembler_Lab11\Debug\Assembler_Lab11.pdb
+D:\VsProj\Assembly_Lab1\Debug\Assembler_Lab11.exe
+D:\VsProj\Assembly_Lab1\Debug\Assembler_Lab11.pdb
