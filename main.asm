@@ -25,7 +25,6 @@ EXTERN  wsprintfA			: PROC	; т.к. число параметров функци
 	messageLength		dd ?
 	buff				db 100 dup (?)
 	resultMessageLength	dd 0
-	resultNumber		dq " "
 	resultSign			db 0
 
 	; local variables for ReadNumber procedure
@@ -105,7 +104,7 @@ main PROC
 		div		di			; разделить значение AX на 10,  edx:eax - делимое. di - делитель. eax - частное, edx - остаток.
 
 		cmp		edx, 10
-		jna     numeral10
+		jb     numeral10
 		sub		edx, 10
 		add		edx, 'A'
 
@@ -171,6 +170,7 @@ ReadNumber PROC
 	xor		eax, eax
 
 	;Проверяем, отрицательно ли первое число.
+	mov		numberSign, 0		; обнуляем флаг отрицательности числа
 	mov		bl, [esi]
 	cmp		bl, '-'
 	jne		convertToNumber		; Если не минус, то переход сразу к конвертированию.
